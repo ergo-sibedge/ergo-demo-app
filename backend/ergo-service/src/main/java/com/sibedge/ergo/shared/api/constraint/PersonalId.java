@@ -10,7 +10,7 @@ import javax.validation.Payload;
 import javax.validation.constraints.Size;
 
 /**
- *
+ * Composite constraint for the person ID.
  */
 @Size(min = 1, max = 50)
 @Target({ ElementType.FIELD })
