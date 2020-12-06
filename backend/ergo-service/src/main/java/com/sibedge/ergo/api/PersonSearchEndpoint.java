@@ -8,7 +8,8 @@ import com.sibedge.ergo.shared.event.AuditEvent;
 import com.sibedge.ergo.shared.event.EventSender;
 import com.sibedge.ergo.shared.transport.ListData;
 import com.sibedge.ergo.shared.transport.PersonData;
-import com.sibedge.ergo.util.Constants;
+import com.sibedge.ergo.shared.transport.PersonFilterData;
+import com.sibedge.ergo.shared.data.EventKey;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -36,16 +37,16 @@ public class PersonSearchEndpoint {
 
     @GetMapping
     public ListData<PersonData> findPersonsByFilter(
-            @NotNull @Validated PersonFilter personFilter,
+            @NotNull @Validated PersonFilterData personFilter,
             @SortDefault(sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         notifyAuditListeners(personFilter);
         return findPersonsByFilterUseCase.execute(personFilter, pageable);
     }
 
-    private void notifyAuditListeners(PersonFilter personFilter) {
+    private void notifyAuditListeners(PersonFilterData personFilter) {
         var event = AuditEvent.of(
-                Constants.EventKey.FILTER_PERSON_LIST.getKey(),
+                EventKey.FILTER_PERSON_LIST,
                 personFilter.toString(),
                 LocalDateTime.now()
         );

@@ -1,6 +1,6 @@
 package com.sibedge.ergo.component.person;
 
-import com.sibedge.ergo.api.PersonFilter;
+import com.sibedge.ergo.shared.transport.PersonFilterData;
 import com.sibedge.ergo.shared.transport.ListData;
 import com.sibedge.ergo.shared.transport.PersonData;
 
@@ -18,5 +18,5 @@ public interface FindPersonsByFilterUseCase {
      * @param pageable     pagination
      * @return found list of persons
      */
-    ListData<PersonData> execute(PersonFilter personFilter, Pageable pageable);
+    ListData<PersonData> execute(PersonFilterData personFilter, Pageable pageable);
 }

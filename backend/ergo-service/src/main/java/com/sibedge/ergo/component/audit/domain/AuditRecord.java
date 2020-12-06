@@ -1,11 +1,14 @@
 package com.sibedge.ergo.component.audit.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.sibedge.ergo.shared.type.BaseEntity;
+import com.sibedge.ergo.shared.data.BaseEntity;
+import com.sibedge.ergo.shared.data.EventKey;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +27,8 @@ import lombok.Setter;
 public class AuditRecord extends BaseEntity {
 
     @NotNull
-    @Size(min = 1, max = 20)
-    private String key;
+    @Enumerated(EnumType.STRING)
+    private EventKey key;
 
     @NotNull
     @Size(min = 1, max = 1000)

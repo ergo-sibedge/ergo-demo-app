@@ -2,7 +2,7 @@ package com.sibedge.ergo.component.person;
 
 import java.util.Optional;
 
-import com.sibedge.ergo.api.PersonFilter;
+import com.sibedge.ergo.shared.transport.PersonFilterData;
 import com.sibedge.ergo.component.person.domain.Person;
 import com.sibedge.ergo.shared.transport.ListData;
 import com.sibedge.ergo.shared.transport.PersonData;
@@ -23,7 +23,7 @@ class FindPersonsByFilterUseCaseImpl implements FindPersonsByFilterUseCase {
 
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_UNCOMMITTED)
-    public ListData<PersonData> execute(PersonFilter personFilter, Pageable pageable) {
+    public ListData<PersonData> execute(PersonFilterData personFilter, Pageable pageable) {
 
         var predicate = new BooleanBuilder()
                 .and(translateWildcard(personFilter.getPersonalId()).map(PersonPredicates::hasPersonalId).orElse(null))

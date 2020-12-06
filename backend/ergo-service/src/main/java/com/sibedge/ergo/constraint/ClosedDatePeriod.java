@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.api.constraint;
+package com.sibedge.ergo.constraint;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +10,7 @@ import javax.validation.Payload;
 /**
  * A custom constraint for the time period validation.
  *
- * @see com.sibedge.ergo.shared.api.constraint.ClosedDatePeriodValidator
+ * @see com.sibedge.ergo.constraint.ClosedDatePeriodValidator
  */
 @Target({ ElementType.TYPE, ElementType.ANNOTATION_TYPE })
 @Retention(RetentionPolicy.RUNTIME)
@@ -30,7 +30,7 @@ public @interface ClosedDatePeriod {
      */
     String end();
 
-    String message() default "{com.sibedge.ergo.validator.costraints.ClosedDatePeriod.message}";
+    String message() default "{com.sibedge.ergo.validator.constraints.ClosedDatePeriod.message}";
 
     Class<?>[] groups() default { };
 

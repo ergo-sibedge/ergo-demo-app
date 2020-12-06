@@ -3,7 +3,7 @@ package com.sibedge.ergo.component.person;
 import java.time.LocalDate;
 
 import com.sibedge.ergo.component.person.domain.QPerson;
-import com.sibedge.ergo.shared.type.Gender;
+import com.sibedge.ergo.shared.data.Gender;
 
 import com.querydsl.core.types.Predicate;
 import lombok.experimental.UtilityClass;
