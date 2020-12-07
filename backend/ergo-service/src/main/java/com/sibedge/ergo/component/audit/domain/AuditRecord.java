@@ -12,6 +12,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Persistent view for an audit record.
+ */
 @Getter
 @Setter
 @Entity

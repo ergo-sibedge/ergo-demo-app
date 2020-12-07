@@ -20,7 +20,7 @@ class ApiExceptionAdvice extends ResponseEntityExceptionHandler {
     /**
      * {@inheritDoc}
      *
-     * Converts validation violations to the standardized error output.
+     * <p>Converts validation violations to the standardized error output.
      */
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException cause,

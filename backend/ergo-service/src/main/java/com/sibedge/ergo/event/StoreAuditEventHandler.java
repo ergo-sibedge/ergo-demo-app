@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RequiredArgsConstructor
-class StoreAuditEventHandler implements EventHandler<AuditEvent>, ApplicationListener<PayloadApplicationEvent<AuditEvent>> {
-
+class StoreAuditEventHandler implements EventHandler<AuditEvent>,
+        ApplicationListener<PayloadApplicationEvent<AuditEvent>> {
     private final RegisterAuditEventUserCase registerAuditEventUserCase;
 
     @Override

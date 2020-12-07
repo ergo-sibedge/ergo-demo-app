@@ -3,7 +3,7 @@
 *.war
 *.ear
 
-/target/
+target/
 !/.mvn/wrapper/maven-wrapper.jar
 
 /.idea/
