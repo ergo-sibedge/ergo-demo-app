@@ -1,19 +1,21 @@
 package com.sibedge.ergo.shared.api.constraint;
 
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-@Target({ TYPE, ANNOTATION_TYPE })
-@Retention(RUNTIME)
+/**
+ * A custom constraint for the time period validation.
+ *
+ * @see com.sibedge.ergo.shared.api.constraint.ClosedDatePeriodValidator
+ */
+@Target({ ElementType.TYPE, ElementType.ANNOTATION_TYPE })
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ClosedDatePeriodValidator.class)
 public @interface ClosedDatePeriod {
-
     /**
      * An attribute name of the lower end of period.
      *

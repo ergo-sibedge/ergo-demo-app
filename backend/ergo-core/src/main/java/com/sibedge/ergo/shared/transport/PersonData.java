@@ -4,9 +4,11 @@ import java.time.LocalDate;
 
 import com.sibedge.ergo.shared.type.Gender;
 
-import lombok.Data;
 import lombok.Value;
 
+/**
+ * Describes a transpor view of a person record.
+ */
 @Value(staticConstructor = "of")
 public class PersonData {
     private String personalId;

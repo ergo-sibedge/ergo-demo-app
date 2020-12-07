@@ -9,8 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
-import com.sibedge.ergo.shared.type.Gender;
 import com.sibedge.ergo.shared.type.BaseEntity;
+import com.sibedge.ergo.shared.type.Gender;
 
 import lombok.Getter;
 import lombok.Setter;

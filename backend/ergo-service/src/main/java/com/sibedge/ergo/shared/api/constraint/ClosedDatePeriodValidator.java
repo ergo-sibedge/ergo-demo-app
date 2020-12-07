@@ -9,7 +9,10 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
 
 /**
+ * A custom class validator that checks two temporal values describing a time range
+ * will be correct: the lower bound is earlier than the upper one.
  *
+ * <p>It works in combination with {@link com.sibedge.ergo.shared.api.constraint.ClosedDatePeriod}.
  */
 @Slf4j
 public class ClosedDatePeriodValidator implements ConstraintValidator<ClosedDatePeriod, Object> {

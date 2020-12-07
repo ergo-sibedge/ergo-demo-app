@@ -7,12 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Size;
 
 /**
- *
+ * Composite constraint for the person birthday.
  */
 @PastOrPresent
 @Target({ ElementType.FIELD })

@@ -8,6 +8,11 @@
     <artifactId>ergo-dev-tool</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <description>Includes dev tools such checkstyle rules and so on</description>
 
 </project>

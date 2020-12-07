@@ -8,7 +8,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * Service entrypoint.
  */
 @SpringBootApplication
-@SuppressWarnings({"checkstyle:hideUtilityClassConstructor"})
 class DemoApplication {
 
     /**
