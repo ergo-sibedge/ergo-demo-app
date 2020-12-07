@@ -10,7 +10,7 @@ import { Person, PersonsRequestParams, PersonsResponse } from './persons';
   providedIn: 'root',
 })
 export class PersonsService {
-  private personsUri = '/persons';
+  private personsUri = '/api/persons';
 
   private filter = {};
 
