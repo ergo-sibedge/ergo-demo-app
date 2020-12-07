@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  backend:
+    build: backend
+    environment:
+      STORE_URL: jdbc:postgresql://store:5432/ergo
+      STORE_USER: ergo
+      STORE_PASSWORD: 9gA4iG
+    labels:
+      com.sibedge.stage: "local"
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+    # volumes:
+      # - type: bind
+        # source: /var/run/docker.sock
+        # target: /var/run/docker.sock
+    networks: 
+      - ergo-net
+
+  store:
+    image: postgres:13.1-alpine
+    environment:
+      POSTGRES_USER: ergo
+      POSTGRES_DB: ergo
+      POSTGRES_PASSWORD: 9gA4iG
+    labels:
+      com.sibedge.stage: "local"
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+        mode: host
+    networks: 
+      - ergo-net
+    volumes:
+      - type: volume
+        source: store-data
+        target: /var/lib/postgresql/data
+  
+  # todo: describe a frontend image
+  frontend:
+    image: busybox:1.32.0
+    labels:
+      com.sibedge.stage: "local"
+    networks: 
+      - ergo-net
+
+networks:
+  ergo-net: {}
+
+volumes:
+  store-data: {}
