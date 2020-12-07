@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.type;
+package com.sibedge.ergo.shared.data;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

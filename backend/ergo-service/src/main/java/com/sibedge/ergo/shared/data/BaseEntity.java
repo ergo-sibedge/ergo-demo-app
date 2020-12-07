@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.type;
+package com.sibedge.ergo.shared.data;
 
 import java.time.LocalDateTime;
 import javax.persistence.EntityListeners;
@@ -14,7 +14,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
- * Conteins a base state for a typical emtity.
+ * Contains a base state for a typical emtity.
  * It includes entity ID and creation time that
  * generates automatically.
  */
@@ -24,7 +24,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -32,5 +31,4 @@ public class BaseEntity {
 
     @CreatedDate
     private LocalDateTime createdAt;
-
 }

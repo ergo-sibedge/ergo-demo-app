@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.api.constraint;
+package com.sibedge.ergo.constraint;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -10,15 +10,15 @@ import javax.validation.Payload;
 import javax.validation.constraints.Size;
 
 /**
- * Composite constraint for the person last name.
+ * Composite constraint for the person ID.
  */
-@Size(min = 2, max = 100)
+@Size(min = 1, max = 50)
 @Target({ ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { })
 @Documented
-public @interface LastName {
-    String message() default "{com.sibedge.ergo.validator.costraints.PersonLastName.message}";
+public @interface PersonalId {
+    String message() default "{com.sibedge.ergo.validator.constraints.PersonFirstName.message}";
 
     Class<?>[] groups() default { };
 

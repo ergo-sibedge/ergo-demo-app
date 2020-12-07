@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.api.constraint;
+package com.sibedge.ergo.constraint;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -7,18 +7,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Size;
 
 /**
- * Composite constraint for the person birthday.
+ * Composite constraint for the person first name.
  */
-@PastOrPresent
+@Size(min = 2, max = 50)
 @Target({ ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { })
 @Documented
-public @interface DateOfBirth {
-    String message() default "{com.sibedge.ergo.validator.costraints.PersonDateOfBirth.message}";
+public @interface FirstName {
+    String message() default "{com.sibedge.ergo.validator.constraints.PersonFirstName.message}";
 
     Class<?>[] groups() default { };
 
