@@ -7,6 +7,7 @@ services:
       STORE_URL: jdbc:postgresql://store:5432/ergo
       STORE_USER: ergo
       STORE_PASSWORD: 9gA4iG
+    command: --spring.profiles.active=demo
     labels:
       com.sibedge.stage: "local"
     ports:
@@ -14,10 +15,6 @@ services:
         published: 8080
         protocol: tcp
         mode: host
-    # volumes:
-      # - type: bind
-        # source: /var/run/docker.sock
-        # target: /var/run/docker.sock
     networks: 
       - ergo-net
 

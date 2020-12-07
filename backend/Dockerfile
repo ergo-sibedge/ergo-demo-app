@@ -49,4 +49,3 @@ ENV JAVA_OPTS -server -XX:+HeapDumpOnOutOfMemoryError -XX:+PrintFlagsFinal -XX:+
 USER ergo
 
 ENTRYPOINT [ "launch.sh" ]
-CMD [ "--spring.profiles.active=demo" ]

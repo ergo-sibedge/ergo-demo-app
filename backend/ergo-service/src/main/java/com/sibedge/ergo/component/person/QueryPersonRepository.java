@@ -6,9 +6,7 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-;
-
-@org.springframework.stereotype.Repository
 @Transactional(readOnly = true)
+@org.springframework.stereotype.Repository
 interface QueryPersonRepository extends Repository<Person, Long>, QuerydslPredicateExecutor<Person> {
 }

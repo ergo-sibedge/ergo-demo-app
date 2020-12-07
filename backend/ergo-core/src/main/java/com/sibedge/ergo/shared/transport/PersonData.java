@@ -2,7 +2,7 @@ package com.sibedge.ergo.shared.transport;
 
 import java.time.LocalDate;
 
-import com.sibedge.ergo.shared.type.Gender;
+import com.sibedge.ergo.shared.data.Gender;
 
 import lombok.Value;
 

@@ -1,4 +1,4 @@
-package com.sibedge.ergo.shared.api.constraint;
+package com.sibedge.ergo.constraint;
 
 import java.time.LocalDate;
 import javax.validation.ConstraintValidator;
@@ -12,7 +12,7 @@ import org.springframework.beans.PropertyAccessorFactory;
  * A custom class validator that checks two temporal values describing a time range
  * will be correct: the lower bound is earlier than the upper one.
  *
- * <p>It works in combination with {@link com.sibedge.ergo.shared.api.constraint.ClosedDatePeriod}.
+ * <p>It works in combination with {@link com.sibedge.ergo.constraint.ClosedDatePeriod}.
  */
 @Slf4j
 public class ClosedDatePeriodValidator implements ConstraintValidator<ClosedDatePeriod, Object> {
@@ -36,7 +36,7 @@ public class ClosedDatePeriodValidator implements ConstraintValidator<ClosedDate
             LocalDate endDate = (LocalDate) beanWrapper.getPropertyValue(endAttributeName);
             return startDate == null || endDate == null || !startDate.isAfter(endDate);
         } catch (Exception cause) {
-            log.warn("Unexpected ", cause);
+            log.warn("Cannot get bean properties: ", cause);
             return false;
         }
     }
